@@ -20,13 +20,11 @@ output(divide(3,2));
 output(divide(3,-2));
 output(divide(3,0));
 function divide(a,b){
-
 	if (b == 0) {//
-		return "Division durch 0 nicht möglich!"
+		return ERROR_STR_DIV;
 	} else {
 		return a / b;
 	}
-	
 }
 
 // module: multiplication a * b |  test:
