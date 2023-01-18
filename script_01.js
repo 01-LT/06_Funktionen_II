@@ -18,25 +18,24 @@ const ERROR_STR_GEN = "Irgendetwas ging schief!";
 // module; calculator | tests:
 // module: check operator | Test:
 // agreement : "+","-","*",":","/"
-output(calculator(3,2,"+"));
-output(calculator(3,2,"-"));
-output(calculator(3,2,"*"));
-output(calculator(3,2,":"));
-output(calculator(3,2,"/"));
-output(calculator(3,0,"/"));
-output(calculator(3,2,"#?!"));
-
+// output(calculator(3,2,"+"));
+// output(calculator(3,2,"-"));
+// output(calculator(3,2,"*"));
+// output(calculator(3,2,":"));
+// output(calculator(3,2,"/"));
+// output(calculator(3,0,"/"));
+// output(calculator(3,2,"#?!"));
 function calculator(a,b,op) {
 switch (op) {
 	case "+": // addition
-		return "Ergebnis addition";
+		return add(a,b);
 	case "-": // subtraktion
-		return "Ergebnis subtraktion";
+		return subtract(a,b);
 	case "*": // multiplikation
-		return "Ergebnis multiplikation";
+		return multiply(a,b);
 	case ":": // division
 	case "/": // division
-		return "Ergebnis division";
+		return divide(a,b);
 	default:
 		return ERROR_STR_GEN
 	}
