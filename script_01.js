@@ -15,7 +15,7 @@
 const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
 const ERROR_STR_GEN = "Irgendetwas ging schief!";
 
-// startApp();
+startApp();
 function startApp()  {
 	output(calculator(getNumber1(),getNumber2(),getOp()));
 }
@@ -29,7 +29,7 @@ function getNumber2() {
 }
 
 // module: input operator | Test:
-output(getOp());
+// output(getOp());
 function getOp() {
 
 	let op = prompt("Operator eingeben:");
