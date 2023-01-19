@@ -1,22 +1,20 @@
-
 "use strict";
 
 /*** Rechner */
 /*
 0. a+b | a-b | a*b | a/b  --> Ergebnis c 
-
 1. Dateneingabe + -überprüfung :
-2. Auswahl Rechenart :
-3. Fkt. Grundrechenarten :
+2. Auswahl Rechenart : check!
+3. Fkt. Grundrechenarten : check!
 4. Ausgabe in Konsole : check!
 */
 
 // Konstanten
 const ERROR_STR_DIV = "Division durch 0 nicht möglich!";
-const ERROR_STR_GEN = "Irgendetwas ging schief!";
+const ERROR_STR_GEN = "Irgendetwas ging schief!"
 
-startApp();
-function startApp()  {
+// startApp();
+function startApp() {
 	output(calculator(getNumber1(),getNumber2(),getOp()));
 }
 
@@ -28,23 +26,32 @@ function getNumber2() {
 	return parseInt(prompt("Zahl 2 eingeben:"));
 }
 
-// module: input operator | Test:
+// module: operator input| Test:
 // output(getOp());
 function getOp() {
 
 	let op = prompt("Operator eingeben:");
+	
+	if (isOpValid(op)) {
 
-	if (op == "+" || op == "-" || op == "*" || op == "/" || op == ":") {
 		return op;
+	
 	} else {
+	
 		return ERROR_STR_GEN;
+	
 	}
 
 }
 
+// module: operator valide?| Test:
+output(isOpValid("+"));
+output(isOpValid("#?!"));
+function isOpValid(op) {
+	return op == "+" || op == "-" || op == "*" || op == "/" || op == ":";
+}
 
-// module; calculator | tests:
-// module: check operator | Test:
+// module: calculator | tests:
 // agreement : "+","-","*",":","/"
 // output(calculator(3,2,"+"));
 // output(calculator(3,2,"-"));
@@ -54,18 +61,18 @@ function getOp() {
 // output(calculator(3,0,"/"));
 // output(calculator(3,2,"#?!"));
 function calculator(a,b,op) {
-switch (op) {
-	case "+": // addition
-		return add(a,b);
-	case "-": // subtraktion
-		return subtract(a,b);
-	case "*": // multiplikation
-		return multiply(a,b);
-	case ":": // division
-	case "/": // division
-		return divide(a,b);
-	default:
-		return ERROR_STR_GEN
+	switch (op) {
+		case "+": // addition
+			return add(a,b);
+		case "-": // subtraktion
+			return subtract(a,b);
+		case "*": // multiplikation
+			return multiply(a,b);
+		case ":": // divison
+		case "/": // divison
+			return divide(a,b);
+		default:
+			return ERROR_STR_GEN;
 	}
 }
 
@@ -74,20 +81,19 @@ switch (op) {
 // output(divide(3,2));
 // output(divide(3,-2));
 // output(divide(3,0));
-function divide(a,b){
-	if (b == 0) {//
+function divide(a,b) {
+	if (b == 0) { 
 		return ERROR_STR_DIV;
-	}
-		return a / b;
-	
+	} 
+	return a / b;
 }
 
 // module: multiplication a * b |  test:
 // output(multiply(3,2));
 // output(multiply(3,-2));
 // output(multiply(3,0));
-function multiply(a,b){
-	return a * b;
+function multiply(a,b) {
+    return a * b; 
 }
 
 // module: subtraction a - b |  test:
@@ -106,10 +112,9 @@ function add(a,b) {
 	return a + b;
 }
 
-// module:  output | test:
+// module: output | test:
 // output("hello");
 // output(2);
 function output(outputData) {
 	console.log(outputData);
 }
-  
